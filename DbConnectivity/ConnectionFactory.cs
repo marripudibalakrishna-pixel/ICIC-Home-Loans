@@ -26,5 +26,21 @@ namespace DbConnectivity
             SqlConnection cn = new SqlConnection(connectionstring);
             return cn;
         }
+
+        public SqlConnection dbMidLanddb()
+        {
+            var connectionstring = Convert.ToString(_configuration.GetSection("ConnectionStrings:MidLandSqlConnectionString").Value);
+
+            SqlConnection cn = new SqlConnection(connectionstring);
+            return cn;
+        }
+
+        public SqlConnection dbNorthWind()
+        {
+            var connectionstring = Convert.ToString(_configuration.GetSection("ConnectionStrings:Northwind_DBSqlConnectionString").Value);
+
+            SqlConnection cn = new SqlConnection(connectionstring);
+            return cn;
+        }
     }
 }

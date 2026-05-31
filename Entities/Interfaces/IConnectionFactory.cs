@@ -10,5 +10,8 @@ namespace Entities.Interfaces
     public interface IConnectionFactory
     {
         SqlConnection dbHotelManagementdb();
+        SqlConnection dbMidLanddb();
+
+        SqlConnection dbNorthWind();
     }
 }
