@@ -58,14 +58,21 @@ namespace Repositories
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add(StoredProcedureParameters.EmpId, empid);
-                var employee = await cn.QueryAsync<Employee>(StoredProcedureNames.GetEmployeeById, parameters, commandType: CommandType.StoredProcedure);
-                return employee.FirstOrDefault();
+                var result = await cn.QueryAsync<Employee>(StoredProcedureNames.GetEmployeeById, parameters, commandType: CommandType.StoredProcedure);
+                return result.FirstOrDefault();
             }
         }
 
         public async Task<bool> UpdateEmployee(Employee employee)
         {
-            using (IDbConnection cn = _connectionFactory.dbHotelManagementdb())
+            //using (IDbConnection cn = _connectionFactory.dbHotelManagementdb())
+            //{
+            //    DynamicParameters parameters = new DynamicParameters();
+            //    parameters.Add(StoredProcedureParameters.EmpId, employee.empid);
+            //    var result = await cn.QueryAsync<Employee>(StoredProcedureNames.GetEmployeeById, parameters, commandType: CommandType.StoredProcedure);
+            //    return result.FirstOrDefault();
+
+                using (IDbConnection cn = _connectionFactory.dbHotelManagementdb())
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add(StoredProcedureParameters.EmpId, employee.empid);
