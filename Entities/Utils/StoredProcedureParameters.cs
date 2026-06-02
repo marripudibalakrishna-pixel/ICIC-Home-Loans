@@ -29,5 +29,24 @@ namespace Entities.Utils
         public static string DeptInsertedvariable = "@insertedvalue";
         #endregion
 
+        #region StoredprocedureParameters for projecterror level log
+
+            public static string StatusCode = "@StatusCode";
+            public static string Message = "@ErrorMessage";
+            public static string StackTrace = "@StackTraceError";
+            public static string InnerException = "@InnerExceptionError";
+        #endregion
+
+        #region StoredprocedureParameters for projecterror level log
+        public static string Username = "@username";
+        public static string LogLevel = "@LogLevel";
+        public static string MessageTemplate = "@MessageTemplate";
+
+
+        #endregion
+
+
+
+
     }
 }

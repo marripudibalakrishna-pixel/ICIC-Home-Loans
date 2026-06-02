@@ -35,5 +35,12 @@ namespace Entities.Utils
 
         #endregion
 
+        #region Stored Procedures for project error level log
+        public static string ProjectLevelErrorLog = "Usp_AddProjectLevelErrorlog";
+#endregion
+        #region Stored Procedures for project level log
+        public static string ProjectLevelLog = "Usp_ProjectLevelLog";
+        #endregion
+
     }
 }
