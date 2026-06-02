@@ -1,3 +1,4 @@
+using Contoller.Middleware;
 using DbConnectivity;
 using Entities.Interfaces;
 using Repositories;
@@ -18,9 +19,12 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IorderService, OrderService>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<ILoggingFactory, Loggingfactory>();
+
 
 var app = builder.Build();
 
+app.UseMiddleware<GlobalErrorHandler>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
