@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class AuthenticateService
+    public class AuthenticateService: IAuthenticateService
     {
         private readonly IAuthenticateRepository _authenticateRepository;
         public AuthenticateService(IAuthenticateRepository authenticateRepository)

@@ -13,7 +13,7 @@ namespace Contoller.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class AuthenticateController : ControllerBase
     {
         private readonly IAuthenticateService _authenticateService;

@@ -1,4 +1,5 @@
 ﻿using DbConnectivity;
+using Entities.Interfaces;
 using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -11,11 +12,14 @@ namespace Contoller.Middleware
     public class GlobalErrorHandler
     {
         private readonly RequestDelegate _next;
-        private readonly Loggingfactory _loggingFactory;
-        public GlobalErrorHandler(RequestDelegate next, Loggingfactory loggingFactory   )
+        private readonly ILoggingFactory _loggingFactory;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public GlobalErrorHandler(RequestDelegate next, ILoggingFactory loggingFactory, IHttpContextAccessor httpContextAccessor    )
         {
             _next = next;
             _loggingFactory = loggingFactory;
+            _httpContextAccessor= httpContextAccessor;
+
         }
 
         public async Task InvokeAsync(HttpContext context)

@@ -11,8 +11,10 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class Authenticaterepository
+    public class Authenticaterepository: IAuthenticateRepository
+
     {
+
         private readonly IConnectionFactory _connectionFactory;
         public Authenticaterepository(IConnectionFactory connectionFactory)
         {
